@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="myHead" runat="server">
+    </asp:ContentPlaceHolder>
+    
+
+    <style type="text/css">
+        .auto-style1 {
+            width: 400px;
+            height: 181px;
+        }
+    </style>
+    
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <form id="frmMainForm" runat="server">
+    <div>
+        <div class="jumbotron text-center">
+            <img alt="" class="" src="Resources\logo.png" /><br />
+        </div>
+        
+        <div class="col-md-12">
+            <div class="col-md-2">    
+                <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1">
+                </asp:TreeView>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+            </div>
+
+            <div class="col-md-10">
+                <asp:ContentPlaceHolder id="myContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+         </div>   
+    </div>
+    </form>
+</body>
+</html>
